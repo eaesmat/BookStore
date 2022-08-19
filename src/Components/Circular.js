@@ -1,7 +1,5 @@
 import './Circular.css';
 
-const Circle = () => {
-    return '';
-}
+const Circle = () => '';
 
 export default Circle;

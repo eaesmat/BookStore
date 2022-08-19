@@ -1,4 +1,3 @@
-import Circle from './Circular';
 import Form from './Form';
 
 const Books = () => (
@@ -19,9 +18,7 @@ const Books = () => (
             <li className="text-primary ps-2 ">Edit</li>
           </ul>
         </div>
-        <div className="col-3">
-          <Circle />
-        </div>
+        <div className="col-3" />
         <div className="col-3 border-start">
           <div className="ps-5">
             <small className="text-secondary ">CURRENT CHAPTERS</small>

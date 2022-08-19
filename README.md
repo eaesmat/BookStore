@@ -1,8 +1,8 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Math-Magicians
+# Book Store
 
-> In this application we are going to use modern library of JavaScript in order to develop Math calculator. 
+> In this application we are going to use modern library of JavaScript React in order to develop a BookStore app. 
 
 
 ## Built With
@@ -36,11 +36,11 @@ To get a local copy up and running follow these simple example steps.
 ### Setup locally 
 
 - Copy HTTPS of repo
-- Clone it on your local machin
+- Clone it on your local machine
 
 ### Or Run this line
 ```
-git clone https://github.com/eaesmat/Math-Magicians.git
+git clone https://github.com/eaesmat/BookStore.git
 
 ```
 
@@ -70,7 +70,7 @@ git clone https://github.com/eaesmat/Math-Magicians.git
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/eaesmat/Math-Magicians/issues).
+Feel free to check the [issues page](https://github.com/eaesmat/BookStore.git).
 
 ## Show your support
 

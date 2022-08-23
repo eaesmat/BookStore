@@ -2,7 +2,7 @@
 
 const Books = ({ title, author }) => (
   <div className="container">
-    <div className="container mt-4 border bg-white rounded shadow p-4 ">
+    <div className="container mt-4 border bg-white rounded shadow px-3 py-2 ">
       <div className="row">
         <div className="col-6">
           <small className="text-secondary fw-bold">Action</small>

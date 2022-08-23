@@ -1,5 +1,5 @@
 const Form = () => (
-  <div className=" mt-5 ">
+  <div className=" mt-5 container">
     <hr className="" />
     <h5 className="text-secondary">Add New Book</h5>
     <form>

@@ -1,4 +1,5 @@
 import Book from './Book';
+import Form from './Form';
 
 const books = [
   {
@@ -17,6 +18,7 @@ const Books = () => (
     {
       books.map((item) => <Book key={item.key} title={item.title} author={item.author} />)
     }
+    <Form />
   </div>
 );
 

@@ -9,7 +9,7 @@ const Books = ({ title, author, id }) => {
     <div className="container">
       <div className="container mt-4 border bg-white rounded shadow px-3 py-2 ">
         <div className="row">
-          <div className="col-6">
+          <div className="col">
             <small className="text-secondary fw-bold">Action</small>
             <h5 className="fw-bold">
               {title}
@@ -35,8 +35,8 @@ const Books = ({ title, author, id }) => {
               </li>
             </ul>
           </div>
-          <div className="col-3" />
-          <div className="col-3 border-start">
+          <div className="col" />
+          <div className="col border-start">
             <div className="ps-5">
               <small className="text-secondary ">CURRENT CHAPTERS</small>
               <p className="pt-1">Chapter 17</p>

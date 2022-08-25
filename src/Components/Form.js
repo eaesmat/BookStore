@@ -34,7 +34,7 @@ const Form = () => {
     state.author = '';
   };
   return (
-    <div className=" mt-5 container">
+    <div className=" container">
       <hr className="" />
       <h5 className="text-secondary">Add New Book</h5>
       <form>
@@ -69,7 +69,7 @@ const Form = () => {
               type="submit"
               onClick={handleSubmit}
             >
-              ADD BOOK
+              Add
             </button>
           </div>
         </div>

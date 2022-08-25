@@ -1,6 +1,5 @@
 import React from 'react';
 import './Book.css';
-// import propType from 'prop-type';
 import { useDispatch } from 'react-redux';
 import { removeBook } from '../Redux/Books/Books';
 
@@ -43,7 +42,7 @@ const Books = ({ title, author, id }) => {
               </li>
             </ul>
           </div>
-          <div className="col ps-3">
+          <div className="col ps-3 d-none d-sm-block">
             {' '}
             <div
               className="d-flex align-center completion-holder pt-4"
@@ -59,7 +58,7 @@ const Books = ({ title, author, id }) => {
                   style={{ strokeDashoffset: 360 - percentage * 1.85 }}
                 />
               </svg>
-              <div>
+              <div className="d-none d-sm-block">
                 <span className="percentage ms-4">
                   {percentage}
                   %
@@ -73,7 +72,11 @@ const Books = ({ title, author, id }) => {
           <div className="col border-start">
             <div className="ps-5">
               <small className="text-secondary ">CURRENT CHAPTERS</small>
-              <p className="pt-1">Chapter 17</p>
+              <p className="pt-1">
+                Chapter
+                {' '}
+                {Math.floor((percentage / 2) * 1.5)}
+              </p>
               <button className="btn btn-primary btn-sm px-4" type="submit">
                 UPDATE PROGRESS
               </button>

@@ -14,9 +14,9 @@ const Books = ({ title, author, id }) => {
         <div className="row">
           <div className="col">
             <small className="text-secondary fw-bold">Action</small>
-            <h5 className="fw-bold">
+            <h5 className="fw-bold Title">
               {title}
-              <div className="text-primary p-0 m-0">{author}</div>
+              <div className="lead p-0 m-0 author text-primary h6">{author}</div>
             </h5>
             <ul className="list-inline d-flex pt-2">
               <li className="text-primary pe-2">

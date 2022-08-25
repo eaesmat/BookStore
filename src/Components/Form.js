@@ -69,7 +69,7 @@ const Form = () => {
               type="submit"
               onClick={handleSubmit}
             >
-              Add
+              ADD BOOK
             </button>
           </div>
         </div>

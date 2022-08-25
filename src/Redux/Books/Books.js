@@ -1,23 +1,31 @@
 const ADD_BOOK = 'bookstore/books/addBook';
 const REMOVE_BOOK = 'bookstore/books/removeBook';
-const defaultData = [
-  { id: 1, title: 'A book to you', author: 'Esmatullah' },
-  { id: 2, title: 'A book of better life', author: 'Ahmadzai' },
-];
-export default function removeReducer(state = defaultData, action) {
+const FETCH_DATA = 'bookstore/books/fetchData';
+export default function addRemoveReducer(state = [], action) {
   switch (action.type) {
+    // fetch data from API
+    case FETCH_DATA:
+      return [...action.payload];
+    // add action
     case ADD_BOOK:
-      return [...state, action.books];
+      return [...state, action.payload];
+    // remove action
     case REMOVE_BOOK:
       return state.filter((book) => book.id !== action.id);
+    // unknown action
     default:
       return state;
   }
 }
 
+export const fetchData = (books) => ({
+  type: FETCH_DATA,
+  payload: books,
+});
+
 export const addBook = (book) => ({
   type: ADD_BOOK,
-  books: book,
+  payload: book,
 });
 
 export const removeBook = (id) => ({

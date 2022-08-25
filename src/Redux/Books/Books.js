@@ -3,16 +3,12 @@ const REMOVE_BOOK = 'bookstore/books/removeBook';
 const FETCH_DATA = 'bookstore/books/fetchData';
 export default function addRemoveReducer(state = [], action) {
   switch (action.type) {
-    // fetch data from API
     case FETCH_DATA:
       return [...action.payload];
-    // add action
     case ADD_BOOK:
       return [...state, action.payload];
-    // remove action
     case REMOVE_BOOK:
       return state.filter((book) => book.id !== action.id);
-    // unknown action
     default:
       return state;
   }

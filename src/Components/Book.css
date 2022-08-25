@@ -1,0 +1,20 @@
+svg {
+  max-width: 70px;
+  max-height: 70px;
+}
+
+.bg {
+  fill: none;
+  stroke-width: 5px;
+  stroke: #1212123a;
+}
+
+.degree {
+  fill: none;
+  stroke-width: 5px;
+  stroke-linecap: round;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+  stroke-dasharray: 360;
+  stroke: #0290ff;
+}

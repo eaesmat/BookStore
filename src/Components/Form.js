@@ -1,42 +1,54 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { v4 as uuidv4 } from 'uuid';
 import { addBook } from '../Redux/Books/Books';
 
 const Form = () => {
-  const [title, setTitle] = useState('');
-  const [author, setAuthor] = useState('');
+  const [state, setState] = useState({
+    title: '',
+    author: '',
+    category: 'Movies',
+  });
   const dispatch = useDispatch();
+  const handleChange = (e) => {
+    setState({
+      ...state,
+      [e.target.name]: e.target.value,
+    });
+  };
 
-  function changeTitle(e) {
-    setTitle(e.target.value);
-  }
-  function changeAuthor(e) {
-    setAuthor(e.target.value);
-  }
-  function sendData(e) {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    // input validation
-    if (title.trim() !== '' && author.trim() !== '') {
-      const id = new Date().getTime(); // create a new ID each milliseconds.
-      dispatch(addBook({ id, title, author }));
+    const { title, author, category } = state;
+    if (title.length > 0 && author.length > 0) {
+      dispatch(
+        addBook({
+          title,
+          author,
+          item_id: uuidv4(),
+          category,
+        }),
+      );
     }
-    setTitle('');
-    setAuthor('');
-  }
+    state.title = '';
+    state.author = '';
+  };
   return (
     <div className=" mt-5 container">
       <hr className="" />
       <h5 className="text-secondary">Add New Book</h5>
-      <form onSubmit={sendData}>
+      <form>
         <div className="row">
           <div className="col-7">
             <input
-              value={title}
-              onChange={changeTitle}
+              onChange={handleChange}
               className="form-control w-100"
               type="text"
               placeholder="Book title"
               required
+              id="title"
+              name="title"
+              value={state.title}
             />
           </div>
           <div className="col-3">
@@ -44,16 +56,20 @@ const Form = () => {
               className="form-control w-100"
               type="text"
               placeholder="Author"
-              value={author}
-              onChange={changeAuthor}
+              onChange={handleChange}
+              id="author"
+              name="author"
+              value={state.author}
               required
             />
           </div>
           <div className="col-2">
-            <button className="btn btn-primary w-100" type="submit">
-              {' '}
+            <button
+              className="btn btn-primary w-100"
+              type="submit"
+              onClick={handleSubmit}
+            >
               ADD BOOK
-              {' '}
             </button>
           </div>
         </div>

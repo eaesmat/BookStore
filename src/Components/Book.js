@@ -1,17 +1,13 @@
-/* eslint-disable no-unused-vars */
-import { useDispatch } from 'react-redux';
-import axios from 'axios';
-import { removeBook } from '../Redux/Books/Books';
+import React from 'react';
 import './Book.css';
+// import propType from 'prop-type';
+import { useDispatch } from 'react-redux';
+import { removeBook } from '../Redux/Books/Books';
 
 // eslint-disable-next-line react/prop-types
 const Books = ({ title, author, id }) => {
   const dispatch = useDispatch();
-  const api = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/gezf2lUpWHKLD7feOMJf/books/';
-  async function remove(id) {
-    dispatch(removeBook(id));
-    await axios.delete(`${api}${id}`);
-  }
+  const deleteBook = () => dispatch(removeBook(id));
   const percentage = Math.floor(Math.random() * 100);
   return (
     <div className="container">
@@ -34,7 +30,7 @@ const Books = ({ title, author, id }) => {
                 <button
                   className="btn text-primary"
                   type="submit"
-                  onClick={() => dispatch(removeBook(id))}
+                  onClick={deleteBook}
                 >
                   Remove
                 </button>
